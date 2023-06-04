@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  border-bottom: 1px solid $gray-secondary-light;
+}
+cut-wc-common-dropdown {
+  &.selected {
+    border-bottom: 4px solid $accent-epsilon;
+    height: 26px;
+  }
+}

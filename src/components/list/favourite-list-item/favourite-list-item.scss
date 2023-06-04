@@ -1,0 +1,47 @@
+.msg-wrapper {
+  width: rem-calc(249);
+  box-sizing: border-box;
+  border-top: 1px solid $gray-secondary-light;
+  padding: rem-calc(10);
+  color: $dark-secondary-text;
+  .msg-date {
+    margin: 0;
+    margin-bottom: rem-calc(5);
+    font-size: rem-calc(10);
+    font-weight: $font-weight-bold;
+  }
+  .msg {
+    display: flex;
+    .icon {
+      color: $accent-eta-dark;
+      font-size: rem-calc(12);
+      margin-right: rem-calc(10);
+      margin-top: rem-calc(2);
+    }
+    p {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .msg-text {
+      font-size: rem-calc(12);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      .highlight {
+        color: $color-tertiary;
+        font-size: rem-calc(14);
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  &.unread {
+    background-color: #f2fafd;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

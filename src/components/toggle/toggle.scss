@@ -1,0 +1,30 @@
+@include toggle-variant();
+@include toggle-variant("primary");
+@include toggle-variant("warn");
+
+:host([small]) {
+  .cut-slider.small {
+    height: 17px;
+    width: 40px;
+    &:after {
+      left: rem-calc(2);
+      top: rem-calc(2);
+      width: rem-calc(13);
+      height: rem-calc(13);
+    }
+  }
+  input {
+    &:checked {
+      ~ .cut-slider {
+        &:after {
+          transform: translateX(23px);
+        }
+      }
+      &:disabled ~ .cut-slider {
+        &:after {
+          transform: translateX(23px);
+        }
+      }
+    }
+  }
+}

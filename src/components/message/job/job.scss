@@ -1,0 +1,68 @@
+.msg {
+  color: $dark-secondary-text;
+  display: inline-block;
+  width: 95%;
+  border: 1px solid $gray-lighter;
+  border-radius: rem-calc(8);
+  box-sizing: border-box;
+  font-size: rem-calc(16);
+  line-height: rem-calc(22);
+  max-width: 85%;
+  min-width: 50%;
+  padding: rem-calc(16);
+  word-break: break-all;
+  overflow-wrap: break-word;
+
+  &.content {
+    min-width: min-content;
+  }
+}
+.job {
+  display: grid;
+  grid-template-columns: rem-calc(40) 1fr;
+  margin: rem-calc(8) rem-calc(80);
+  padding: rem-calc(10);
+  border-radius: rem-calc(8);
+  background-color: $gray-lightest;
+  grid-column-gap: rem-calc(20);
+  width: 70%;
+  overflow: hidden;
+  opacity: 0.8;
+  line-height: rem-calc(22);
+  &.message-center {
+    width: 95%;
+    margin: rem-calc(8) rem-calc(0);
+    box-sizing: border-box;
+    max-width: 85%;
+    min-width: 50%;
+    padding: rem-calc(16);
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  cut-wc-icon {
+    font-size: rem-calc(40);
+  }
+  font-family: Lato;
+  .link {
+    color: $blue;
+    font-size: rem-calc(16);
+    font-weight: $font-weight-bold;
+  }
+  .company {
+    color: $dark-secondary-text;
+    font-size: rem-calc(16);
+    font-weight: $font-weight-bold;
+    display: block;
+  }
+  .desc {
+    color: $dark-secondary-text;
+    font-size: rem-calc(16);
+  }
+  .actions {
+    display: inline-flex;
+    margin: rem-calc(10) rem-calc(60);
+    .pd-r {
+      padding-right: rem-calc(10);
+    }
+  }
+}

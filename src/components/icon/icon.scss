@@ -1,0 +1,15 @@
+@import url("https://d3g7tb6xhtixy5.cloudfront.net/cut/assets/icons/css/cut.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+i {
+  &.material-icons {
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+  }
+  &[class^="cut-"] {
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+  }
+}

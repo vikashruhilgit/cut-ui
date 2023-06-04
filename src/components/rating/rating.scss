@@ -1,0 +1,32 @@
+:host{
+  display: inline-block;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .indicator-wrapper {
+    display: flex;
+    align-items: center;
+    .dot {
+      width: rem-calc(8);
+      height: rem-calc(8);
+      background-color: $gray-secondary-light;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: rem-calc(5);
+      &.active {
+        background-color: $accent-delta;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .text-wrapper{
+    color:$dark-secondary-text;
+    font-size: rem-calc(12);
+    margin-left: rem-calc(10);
+    font-style: oblique;;
+  }
+}

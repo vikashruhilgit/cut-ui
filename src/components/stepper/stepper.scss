@@ -1,0 +1,161 @@
+.wrapper {
+  position: relative;
+  color: $dark-secondary-text;
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    .step-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .step {
+        font-size: rem-calc(10);
+        height: rem-calc(30);
+        width: rem-calc(30);
+        box-sizing: border-box;
+        border: 5px solid $color-secondary-light;
+        border-radius: 50%;
+        @include cut-shadow("bottom-medium");
+        display: flex;
+        background: $WHITE;
+        span {
+          margin: auto;
+          cut-wc-icon {
+            font-size: rem-calc(10);
+            font-weight: $font-weight-bold;
+          }
+        }
+        &.inactive {
+          border: 5px solid $light-secondary-text;
+          box-shadow: none;
+        }
+        &.complete {
+          border: 5px solid $color-secondary-dark;
+          background: $color-secondary-dark;
+          color: $WHITE;
+        }
+        &.error {
+          border: 5px solid $accent-eta-dark;
+          color: $accent-eta-dark;
+        }
+        &.link {
+          cursor: pointer;
+        }
+      }
+      &:first-child {
+        align-items: flex-start;
+      }
+      &:last-child {
+        align-items: flex-end;
+      }
+      .label {
+        font-size: rem-calc(14);
+        margin-top: rem-calc(8);
+        &.current {
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+  .bar {
+    position: absolute;
+    margin-top: -(rem-calc(3));
+    width: 100%;
+    top: 15px;
+    z-index: -1;
+  }
+}
+
+:host([vertical]) {
+  .wrapper {
+    position: relative;
+    display: inline-block;
+    .steps {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .step-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: rem-calc(20);
+        .step {
+          font-size: rem-calc(10);
+          height: rem-calc(30);
+          width: rem-calc(30);
+          box-sizing: border-box;
+          border: 5px solid $color-secondary-light;
+          border-radius: 50%;
+          @include cut-shadow("bottom-medium");
+          display: flex;
+          background: $WHITE;
+          span {
+            margin: auto;
+            cut-wc-icon {
+              font-size: rem-calc(10);
+              font-weight: $font-weight-bold;
+            }
+          }
+          &.inactive {
+            border: 5px solid $light-secondary-text;
+            box-shadow: none;
+          }
+          &.complete {
+            border: 5px solid $color-secondary-dark;
+            background: $color-secondary-dark;
+            color: $WHITE;
+          }
+          &.error {
+            border: 5px solid $accent-eta-dark;
+            color: $accent-eta-dark;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .label {
+          font-size: rem-calc(14);
+          margin-top: 0;
+          margin-left: rem-calc(10);
+          align-items: center;
+          &.current {
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+    .bar {
+      position: absolute;
+      margin-top: -(rem-calc(3));
+      width: 100%;
+      top: 15px;
+      z-index: -1;
+      transform: rotate(90deg);
+      transform-origin: 15px;
+    }
+  }
+}
+
+:host([non-linear]) {
+  .wrapper {
+    .steps {
+      .step-wrapper {
+        .step {
+          border: 5px solid $color-tertiary-light;
+          &.inactive {
+            border: 5px solid $color-tertiary-lighter;
+          }
+          &.complete {
+            border: 5px solid $color-tertiary;
+            background: $color-tertiary;
+            color: $WHITE;
+          }
+          &.error {
+            border: 5px solid $accent-eta-dark;
+            color: $accent-eta-dark;
+          }
+        }
+      }
+    }
+  }
+}

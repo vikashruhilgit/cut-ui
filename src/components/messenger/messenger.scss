@@ -1,0 +1,50 @@
+.messenger-wrapper {
+  display: flex;
+  cut-wc-message-center,
+  cut-wc-message-empty {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .messenger-wrapper {
+    flex-direction: column;
+  }
+  cut-wc-message-feed {
+    order: 2;
+    margin-top: rem-calc(20);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .hide-feed cut-wc-message-feed {
+    display: none;
+  }
+
+  .hide-message-center cut-wc-message-center {
+    display: none;
+  }
+
+  .back-to-feed {
+    display: flex;
+    justify-content: left;
+    padding: 0.2rem;
+    span {
+      color: $dark-secondary-text;
+    }
+    i {
+      vertical-align: sub;
+      font-size: 1.25rem;
+    }
+  }
+
+  .back-to-feed-hide {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .back-to-feed {
+    display: none;
+  }
+}

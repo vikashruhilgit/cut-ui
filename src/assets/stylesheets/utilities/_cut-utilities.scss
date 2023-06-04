@@ -1,0 +1,128 @@
+@import "../variables/cut-theme-variables";
+@import "./cut-padding-margin";
+@import "./cut-border";
+@import "./cut-font-size";
+
+%hyperlink {
+  color: $color-link;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: $color-link-hover;
+  }
+  &:focus {
+    outline: 0;
+    color: $color-link-hover;
+  }
+  &:active {
+    color: $color-link-active;
+  }
+
+  /* &:visited {
+    color: $color-link-visited;
+  } */
+}
+
+%cb-gradient {
+  $grad-angle: 152deg;
+  $grad-fallback: #182642;
+  $grad-start: #236ba2 0%;
+  $grad-stop-mid: #287ab9 28%;
+  $grad-end: #182642 85%;
+
+  $grad-expression: $grad-angle, $grad-start, $grad-stop-mid, $grad-end;
+  background: $grad-fallback;
+  background: -webkit-linear-gradient($grad-expression);
+  background: -moz-linear-gradient($grad-expression);
+  background: linear-gradient($grad-expression);
+}
+
+%has-hover-animation {
+  -webkit-transition: color 0.25s ease-in-out,
+    background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+}
+
+%has-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+%is-block {
+  width: 100%;
+  display: block;
+}
+
+.is-responsive {
+  width: 100%;
+  max-width: 100%;
+}
+
+.is-info {
+  color: $accent-beta;
+}
+
+.is-warning {
+  color: $accent-zeta-light;
+}
+
+.is-error {
+  color: $accent-eta;
+}
+
+.has-margin-bottom {
+  margin-bottom: $padding-base;
+}
+
+%has-margin-bottom {
+  margin-bottom: $padding-base;
+}
+
+.list-style-menu {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  background: $WHITE;
+  border-radius: $border-radius-base;
+
+  li {
+    border-bottom: solid 1px $color-border;
+    a {
+      display: block;
+      color: $color-link;
+      //@extend %hyperlink;
+      padding: $padding-base;
+      text-decoration: none;
+      &:hover {
+        color: $WHITE;
+        background: $accent-beta;
+      }
+      &:active {
+        color: $WHITE;
+        background: $color-tertiary-dark;
+      }
+      &:visited {
+        color: $color-link;
+      }
+    }
+    &:first-child {
+      a {
+        border-radius: $border-radius-base $border-radius-base 0 0;
+      }
+    }
+    &:last-child {
+      border: none;
+      a {
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+      }
+    }
+  }
+}

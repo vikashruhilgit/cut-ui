@@ -1,0 +1,12 @@
+@import "../variables/cut-theme-variables";
+
+%cut-tags {
+  display: flex;
+  height: rem-calc(17);
+  @extend %border-radius-9;
+  @extend %font-size-10;
+  align-items: center;
+  color: $WHITE;
+  justify-content: center;
+  @extend %padding-x-15;
+}

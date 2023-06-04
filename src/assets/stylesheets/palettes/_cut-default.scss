@@ -1,0 +1,29 @@
+$cut-secondary: (A100 : #ffea54,
+  A200 : #ffea54,
+  A400 : #fdb816,
+  A700 : #c58800,
+  contrast: (A100 : $dark-primary-text,
+    A200 : $dark-primary-text,
+    A400 : $dark-primary-text,
+    A700 : $dark-primary-text,
+  ));
+
+$cut-primary: (A100: #65a9ec,
+  A200: #65a9ec,
+  A400: #287ab9,
+  A700: #004e89,
+  contrast: (A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ));
+
+$cut-warn: (A100: #ff9a93,
+  A200: #ff9a93,
+  A400: #D12C27,
+  A700: #b9363b,
+  contrast: (A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ));

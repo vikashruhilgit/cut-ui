@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+
+/* rem calculation */
+@import "./mixins/cut-rem-calc";
+
+/* standard variable */
+@import "./variables/cut-theme-variables";
+
+/* shadow */
+@import "./components/cut-shadow";
+
+/* buttons */
+@import "./components/cut-button";
+
+/* Checkbox, radio, toggle */
+@import "./components/cut-radio-n-check";
+
+/* next todo checkbox */
+@import "./components/cut-tags";
+
+@import "./utilities/cut-utilities";
+
+h1,
+.h1 {
+  margin-bottom: $gutter;
+}
+
+h6,
+.h6 {
+  margin-bottom: $gutter/3;
+}
+
+p {
+  margin-bottom: $gutter/3;
+}
+
+.container-fluid {
+  max-width: 1800px;
+}
+
+a,
+a *,
+.btn {
+  @extend %has-hover-animation;
+}
+
+hr {
+  border-color: $color-border;
+}

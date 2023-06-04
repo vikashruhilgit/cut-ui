@@ -1,0 +1,178 @@
+$dark-primary-text: #182642;
+$light-secondary-text: #e9e9e9;
+$dark-secondary-text: #5d677a;
+
+/*TODO:  Highly recommend following a global and abstract naming convention for variables*/
+/*
+**     Define the variable naming convention rule
+**
+*/
+
+//-COLORS----------------------
+
+//-Brand Colors----------------
+$color-primary-light: #90a4ae;
+$color-primary: #182642;
+$color-primary-dark: #1c202a;
+
+$color-secondary-light: #85ce3f;
+$color-secondary: #009b74;
+$color-secondary-dark: #008563;
+
+$color-tertiary-lighter: #99d5ec;
+$color-tertiary-light: #0097d1;
+$color-tertiary: #2777b4;
+$color-tertiary-dark: #1e5c8b;
+
+$accent-eta: #f16865;
+$accent-eta-dark: #d12c27;
+//-COLORS----------------------
+// I THINK EVERYTHING BELOW HERE CAN GO AWAY
+//-Brand Colors----------------
+
+//-Accent Colors---------------
+$accent-alpha-lighter: #d1c4e9;
+$accent-alpha-light: #b39ddb;
+$accent-alpha: #b388ff;
+$accent-alpha-dark: #673ab7;
+$accent-alpha-darker: #311b92;
+
+$accent-beta-lighter: #b3e5fc;
+$accent-beta-light: #4db8e6;
+$accent-beta: #09a0db;
+$accent-beta-dark: #1280a1;
+$accent-beta-darker: #004765;
+
+$accent-gamma-lighter: #b2ebf2;
+$accent-gamma-light: #84d6dc;
+$accent-gamma: #50c5cd;
+$accent-gamma-dark: #0195a3;
+$accent-gamma-darker: #006064;
+
+$accent-delta-lighter: #c5e1a5;
+$accent-delta-light: #a9dc78;
+$accent-delta: #85ce3f;
+$accent-delta-dark: #66a52a;
+$accent-delta-darker: #1f812d;
+
+$accent-epsilon-lighter: #fff59d;
+$accent-epsilon-light: #ffd732;
+$accent-epsilon: #fdb816;
+$accent-epsilon-dark: #cb7c00;
+$accent-epsilon-darker: #a06200;
+
+$accent-zeta-lighter: #ffcc80;
+$accent-zeta-light: #ff9c4c;
+$accent-zeta: #ff7200;
+$accent-zeta-dark: #d04900;
+$accent-zeta-darker: #a04002;
+
+$accent-zeta-warn: #d12c27;
+
+$accent-eta-lighter: #ffcdd2;
+$accent-eta-light: #ef9a9a;
+$accent-eta-darker: #a41c18;
+
+//-Gray----------------
+$gray-lightest: #f1f1f1;
+$gray-lighter: #e4e4e4;
+$gray-light: #d8d8d8;
+$gray: #d2d2d2;
+$gray-dark: #aaaaaa;
+$gray-darker: #767676;
+$gray-darkest: #4a4a4a;
+
+$gray-secondary-light: #e9e9e9;
+
+//-Constants---------------
+$WHITE: #ffffff;
+$BLACK: #000000;
+$RED: $accent-eta-dark;
+$PURPLE: $accent-alpha-dark;
+
+//-Semantic--------------
+$color-info: $accent-beta;
+$color-success: $accent-delta;
+$color-warning: $accent-epsilon;
+$color-error: $accent-eta;
+$error: $accent-eta;
+
+$color-body: $gray-darkest;
+$color-background: $gray-lighter;
+$color-border: $gray-light;
+$color-heading: $color-primary;
+
+$color-link: $color-tertiary;
+$color-link-hover: $accent-beta;
+$color-link-active: $color-tertiary-dark;
+$color-link-visited: $accent-alpha-dark;
+
+//-FONTS---------------------------------------------
+$font-family-base: Lato, Helvetica, Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-size-base: 0.8125rem;
+$font-size-giant: 2.25rem;
+$font-size-huge: 2rem;
+$font-size-big: 1.75rem;
+$font-size-h1: 1.5rem;
+$font-size-h2: 1.25rem;
+$font-size-h3: 1.125rem;
+$font-size-h4: 1rem;
+$font-size-h5: 0.8125rem;
+$font-size-h6: 0.8125rem;
+$font-size-small: 0.75rem;
+$font-size-smaller: 0.6875rem;
+
+//-SCAFFOLDING----------
+$gutter: 30px;
+$margin-base: 15px;
+$padding-base: 15px;
+$padding-alt: 20px;
+$border-radius-base: 3px;
+$border-radius: 8px;
+$base-length: 10px;
+
+//CARD-----------------
+$cardHeightUnit: 135px;
+$card-height-sm: 180px;
+$card-height-md: 140px;
+$card-height-lg: 120px;
+$card-height-xl: 100px;
+$card-margin-bottom: $gutter;
+
+//SHADOW---
+$box-shadow-base: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+
+//CANDIDATE-DETAILS-PAGE------------------
+$item-hover: #e9e9e9;
+$card-backdrop: #f8fbfd;
+$pill-color: #cee0ee;
+$action-bar-button-text-color: #2265a9;
+$export-to-ats-input-color: #2a7ab8;
+$export-to-ats-error-color: #eb5053;
+
+//ACTIVITY HISTORY--------------------------
+$views-container-background-color: #f0fff9;
+$icon-favorite-color: #16a980;
+$icon-today-color: #2a76e8;
+
+//DASHBOARD LIST---------------------------
+$link-color: $export-to-ats-input-color;
+$list-background-color: #f6fcfc;
+$list-label-color: #979797;
+
+//nice to have
+$line-width: 35;
+$circle-sides: 10;
+
+//checklist size
+$list-margin: 5 5 5 15;
+
+//button min width
+$button-min-width: 200px;
+
+// Message Component
+$blue: #287ab9;

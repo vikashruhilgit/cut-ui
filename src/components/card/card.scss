@@ -1,0 +1,65 @@
+:host {
+  flex: 1;
+  display: inline-block;
+}
+.wapper-main {
+  @include cut-shadow("bottom-medium");
+  border-radius: 3px;
+  .wapper {
+    color: $dark-primary-text;
+    padding: rem-calc(30);
+
+    .heading {
+      .title {
+        font-size: rem-calc(20);
+        font-weight: $font-weight-bold;
+      }
+      display: flex;
+      justify-content: space-between;
+    }
+    .subheading {
+      font-weight: $font-weight-bold;
+      padding-top: rem-calc(20);
+    }
+    .content {
+      font-size: rem-calc(14);
+      padding-top: rem-calc(10);
+    }
+    .action-buttons {
+      display: flex;
+      padding-top: rem-calc(20);
+      cut-wc-button {
+        flex: 1;
+      }
+    }
+    .image-box {
+      img {
+        border-radius: rem-calc(5);
+      }
+      p {
+        text-align: center;
+        margin: rem-calc(10 10 0);
+        font-size: rem-calc(12);
+        color: $dark-secondary-text;
+        display: block;
+      }
+    }
+  }
+  .image-box {
+    img {
+      width: 100%;
+      border-radius: rem-calc(5 5 0 0);
+    }
+    p {
+      display: none;
+    }
+  }
+}
+
+.heading + .image-box {
+  padding-top: rem-calc(20);
+}
+
+.image-box + .heading {
+  padding-top: rem-calc(20);
+}

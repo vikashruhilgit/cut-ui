@@ -1,0 +1,54 @@
+$total-width: 50;
+
+@mixin create-padding-margin-extends($width) {
+  %padding-#{$width} {
+    padding: rem-calc($width);
+  }
+  %padding-x-#{$width} {
+    padding-left: rem-calc($width);
+    padding-right: rem-calc($width);
+  }
+  %padding-y-#{$width} {
+    padding-top: rem-calc($width);
+    padding-bottom: rem-calc($width);
+  }
+  %padding-left-#{$width} {
+    padding-left: rem-calc($width);
+  }
+  %padding-right-#{$width} {
+    padding-right: rem-calc($width);
+  }
+  %padding-top-#{$width} {
+    padding-top: rem-calc($width);
+  }
+  %padding-bottom-#{$width} {
+    padding-bottom: rem-calc($width);
+  }
+  %margin-#{$width} {
+    margin: rem-calc($width);
+  }
+  %margin-x-#{$width} {
+    margin-left: rem-calc($width);
+    margin-right: rem-calc($width);
+  }
+  %margin-y-#{$width} {
+    margin-top: rem-calc($width);
+    margin-bottom: rem-calc($width);
+  }
+  %margin-left-#{$width} {
+    margin-left: rem-calc($width);
+  }
+  %margin-right-#{$width} {
+    margin-right: rem-calc($width);
+  }
+  %margin-top-#{$width} {
+    margin-top: rem-calc($width);
+  }
+  %margin-bottom-#{$width} {
+    margin-bottom: rem-calc($width);
+  }
+}
+
+@for $i from 0 to $total-width {
+  @include create-padding-margin-extends($i);
+}

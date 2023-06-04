@@ -1,0 +1,33 @@
+@include create-cut-buttons(primary, accent, warn, tertiary);
+
+@include create-cut-buttons-size(large, medium, small);
+
+:host([disabled]) button {
+  background: $gray-secondary-light;
+}
+
+:host([ghost]) button {
+  background: none;
+  box-shadow: none;
+  color: $dark-secondary-text;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+:host([positive]) button {
+  color: $color-tertiary;
+  &:hover {
+    color: $color-tertiary-light;
+  }
+}
+
+:host([disabled]) button {
+  color: $gray-dark;
+  cursor: not-allowed;
+  box-shadow: none;
+  border: none;
+  &:hover {
+    color: $gray-dark;
+  }
+}

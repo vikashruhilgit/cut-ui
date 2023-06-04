@@ -1,0 +1,18 @@
+.message-history {
+  height: calc(100vh - 21rem);
+  padding: rem-calc(15);
+  overflow-y: auto;
+  .loader {
+    padding: rem-calc(10);
+    border-radius: rem-calc(5);
+    margin-top: rem-calc(10);
+    padding-bottom: 0;
+    cut-wc-loader {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .new-msg {
+    float: right;
+  }
+}

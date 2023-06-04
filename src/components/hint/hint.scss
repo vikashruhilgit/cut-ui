@@ -1,0 +1,76 @@
+.wrapper {
+  width: 370px;
+  position: absolute;
+  display: inline-block;
+  @include cut-shadow("bottom-medium");
+  padding: rem-calc(30);
+  color: $dark-primary-text;
+  border-radius: rem-calc(5);
+  font-size: rem-calc(12);
+  border-left: 5px solid $color-tertiary-light;
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  z-index: -10;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      font-size: rem-calc(20);
+      color: $color-tertiary;
+      display: flex;
+      align-items: center;
+      cut-wc-icon {
+        font-size: rem-calc(16);
+        padding-right: rem-calc(10);
+      }
+      span {
+        font-weight: $font-weight-bold;
+      }
+    }
+    .close {
+      cursor: pointer;
+      cut-wc-icon {
+        font-size: rem-calc(16);
+      }
+    }
+  }
+  .content {
+    padding-top: rem-calc(20);
+  }
+}
+
+:host([open]) {
+  .wrapper {
+    z-index: 10;
+    opacity: 1;
+    background-color: $WHITE;
+  }
+}
+
+:host([left]) {
+  .wrapper {
+    border-width: 0;
+    border-right: 5px solid $color-tertiary-light;
+  }
+}
+
+:host([right]) {
+  .wrapper {
+    border-width: 0;
+    border-left: 5px solid $color-tertiary-light;
+  }
+}
+
+:host([top]) {
+  .wrapper {
+    border-width: 0;
+    border-bottom: 5px solid $color-tertiary-light;
+  }
+}
+
+:host([bottom]) {
+  .wrapper {
+    border-width: 0;
+    border-top: 5px solid $color-tertiary-light;
+  }
+}

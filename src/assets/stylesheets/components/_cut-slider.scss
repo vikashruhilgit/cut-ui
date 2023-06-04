@@ -1,0 +1,126 @@
+@import "../variables/cut-theme-variables";
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+  background: #d8e0f3;
+  border: none;
+  cursor: pointer;
+
+  .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 20px !important;
+    height: 20px !important;
+    cursor: pointer;
+    background-color: $accent-beta-light;
+    outline: none;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    border: none;
+
+    &:after {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      content: '';
+    }
+
+    &:active:after {
+      background: $gray;
+    }
+
+    span {
+      display: inline-block;
+      position: relative;
+      top: 20px;
+      left: -8px;
+      user-select: none;
+      font-size: 11px;
+      color: $accent-beta-light;
+      width: 35px;
+      text-align: center;
+    }
+  }
+
+  .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background: $accent-beta-light;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+
+  .ui-slider-handle.ui-state-active {
+    background-position: -17px 0;
+  }
+}
+
+.ui-slider-horizontal {
+  height: 4px;
+
+  .ui-slider-handle {
+    top: -8px !important;
+    margin-left: -.6em;
+  }
+
+  .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+
+  .ui-slider-range-min {
+    left: 0;
+  }
+
+  .ui-slider-range-max {
+    right: 0;
+  }
+}
+
+.ui-slider-vertical {
+  width: .8em;
+  height: 100px;
+
+  .ui-slider-handle {
+    left: -.2em !important;
+    margin-left: 0;
+    margin-bottom: -.6em;
+  }
+
+  .ui-slider-range {
+    left: 0;
+    width: 100%;
+  }
+
+  .ui-slider-range-min {
+    bottom: 0;
+  }
+
+  .ui-slider-range-max {
+    top: 0;
+  }
+}
+
+.close-range {
+  position: relative;
+  top: 12px;
+
+  span {
+    display: inline-block;
+    user-select: none;
+    font-size: 11px;
+    color: $accent-beta-light;
+  }
+}

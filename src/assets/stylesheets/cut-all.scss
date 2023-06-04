@@ -1,0 +1,30 @@
+@import "./cut-core";
+
+/* all component scss */
+
+@import "../../components/auto-complete/auto-complete.scss";
+@import "../../components/button/button.scss";
+@import "../../components/card-dropdown/card-dropdown.scss";
+@import "../../components/card/card.scss";
+@import "../../components/checkbox/checkbox.scss";
+@import "../../components/circle-button/circle-button.scss";
+@import "../../components/dropdown/dropdown.scss";
+@import "../../components/footer-product/footer-product.scss";
+@import "../../components/footer-web/footer-web.scss";
+@import "../../components/hint/hint.scss";
+@import "../../components/info-card/info-card.scss";
+@import "../../components/input/input.scss";
+@import "../../components/link/link.scss";
+@import "../../components/notification/notification.scss";
+@import "../../components/pills/pills.scss";
+@import "../../components/progress-bar/progress-bar.scss";
+@import "../../components/radio/radio.scss";
+@import "../../components/rating/rating.scss";
+@import "../../components/select/select.scss";
+@import "../../components/stepper/stepper.scss";
+@import "../../components/tags/tags.scss";
+@import "../../components/text-area/text-area.scss";
+@import "../../components/toggle/toggle.scss";
+@import "../../components/tooltip/tooltip.scss";
+
+/* add new component when you add new */

@@ -1,0 +1,61 @@
+.wrapper {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  color: $WHITE;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  height: rem-calc(51);
+  transition: all 0.3s ease-out, all 0.3s ease-out;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-radius: rem-calc(0 0 5 5);
+  background-color: $color-tertiary-light;
+  .notification-area {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    .icon cut-wc-icon {
+      padding-left: 2rem;
+      padding-right: 1rem;
+      font-size: rem-calc(16);
+      display: flex;
+    }
+  }
+
+  .close {
+    width: rem-calc(70);
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    span {
+      align-self: center;
+      font-size: $font-size-h3;
+      font-weight: $font-weight-light;
+    }
+  }
+}
+
+:host([open]) .wrapper {
+  top: 0px;
+}
+
+:host([success]) .wrapper {
+  background-color: $color-secondary-dark;
+}
+
+:host([warn]) .wrapper {
+  background-color: $accent-epsilon;
+}
+
+:host([error]) .wrapper {
+  background-color: $accent-eta-dark;
+}
+
+:host([info]) .wrapper {
+  background-color: $color-tertiary;
+}

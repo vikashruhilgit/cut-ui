@@ -1,0 +1,55 @@
+.new-message-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: rem-calc(12);
+  border-top: 1px solid $gray-light;
+  .new-message {
+    flex: 1;
+    textarea {
+      border: none;
+      color: $color-primary;
+      font-size: rem-calc(16);
+      line-height: rem-calc(16);
+      height: auto;
+      resize: none;
+      width: 100%;
+      font-family: inherit;
+      display: block;
+      overflow: hidden;
+      overflow-y: auto;
+      margin: rem-calc(10);
+      box-sizing: border-box;
+      outline: none;
+    }
+  }
+  .misc-wrapper {
+    display: flex;
+    cut-wc-icon,
+    cut-wc-emoji {
+      font-size: rem-calc(24);
+      color: $dark-secondary-text;
+      display: flex;
+      align-items: center;
+    }
+    .defaultColor {
+      color: $dark-secondary-text;
+    }
+    .msgColor {
+      color: $color-tertiary-light;
+    }
+    .icon-wrapper {
+      display: flex;
+      align-self: center;
+      padding: rem-calc(0 8);
+      cursor: pointer;
+    }
+    .send {
+      border-left: 1px solid $gray-light;
+      padding: rem-calc(0 16);
+      cut-wc-icon {
+        transform: rotate(-45deg);
+        margin-bottom: rem-calc(5);
+      }
+    }
+  }
+}

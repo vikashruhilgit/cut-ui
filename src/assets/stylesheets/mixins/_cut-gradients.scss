@@ -1,0 +1,24 @@
+@import './cut-rem-calc';
+
+@mixin cut-gradient ($type, $flag:true) {
+  @if $flag == true {
+    background-color: transparent !important;
+  }
+	color: #ffffff;
+
+  @if $type==primary {
+    background: linear-gradient(90deg, $color-secondary 0%, $color-secondary-light 100%);
+  }
+
+  @else if $type==accent {
+    background: linear-gradient(90deg, $color-tertiary 0%, $color-tertiary-light 100%);
+  }
+
+  @else if $type==warn {
+    background: linear-gradient(90deg, $accent-eta-dark 0%, $accent-eta 100%);
+	}
+
+	@else if $type==dark {
+		background: linear-gradient(90deg, $color-secondary-dark 0%, $color-secondary-light 100%);
+	}
+}

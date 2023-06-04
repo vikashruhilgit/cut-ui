@@ -1,0 +1,55 @@
+.msg {
+  color: $dark-secondary-text;
+  display: inline-block;
+  font-size: rem-calc(16);
+  line-height: rem-calc(22);
+  width: 100%;
+  .out,
+  .in {
+    border: 1px solid $gray-lighter;
+    border-radius: rem-calc(8);
+    box-sizing: border-box;
+    font-size: rem-calc(16);
+    line-height: rem-calc(22);
+    max-width: 75%;
+    min-width: 50%;
+    padding: rem-calc(16);
+    word-break: break-all;
+    overflow-wrap: break-word;
+
+    &.content {
+      min-width: min-content;
+    }
+  }
+  .out {
+    color: $WHITE;
+    float: right;
+
+    &.content {
+      background-color: $color-tertiary-light;
+      border: none;
+    }
+    & + .msg-info {
+      float: right;
+      text-align: right;
+    }
+    a {
+      color: white !important;
+    }
+  }
+  .in {
+    float: left;
+    & + .msg-info {
+      float: left;
+      text-align: left;
+    }
+  }
+}
+.msg-info {
+  color: $dark-secondary-text;
+  font-size: rem-calc(12);
+  height: rem-calc(15);
+  line-height: rem-calc(15);
+  padding: rem-calc(8) 0 rem-calc(12) 0;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+.branding {
+  img {
+    display: block;
+    width: rem-calc(209);
+    object-fit: scale-down;
+  }
+  .tag-line {
+    padding-top: rem-calc(5);
+    margin: 0;
+    font-size: rem-calc(14);
+  }
+}

@@ -1,0 +1,24 @@
+:host {
+  display: inline-block;
+}
+:host([primary]) {
+  .tags {
+    @extend %cut-tags;
+    background-color: $color-secondary;
+  }
+}
+
+:host([accent]) .tags {
+  @extend %cut-tags;
+  background-color: $color-tertiary;
+}
+
+:host([warn]) .tags {
+  @extend %cut-tags;
+  background-color: $accent-epsilon;
+}
+
+:host([close]) .tags {
+  @extend %cut-tags;
+  background-color: $accent-eta;
+}

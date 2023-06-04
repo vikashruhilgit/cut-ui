@@ -1,0 +1,28 @@
+:host {
+  margin-right: rem-calc(30);
+}
+
+p {
+  color: inherit;
+  user-select: none;
+  font-size: inherit;
+  margin: 0;
+  &::before {
+    content: attr(title);
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    font-weight: $font-weight-bold;
+  }
+  span {
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    &.selected {
+      border-bottom: 4px solid $accent-epsilon;
+      box-sizing: border-box;
+      font-weight: $font-weight-bold;
+    }
+  }
+}

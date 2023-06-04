@@ -1,0 +1,29 @@
+:host {
+  .wrapper {
+    position: absolute;
+    display: none;
+  }
+}
+
+:host(.shadow) {
+  .wrapper {
+    @include cut-shadow("bottom-large");
+  }
+}
+
+:host([open]) {
+  .wrapper {
+    display: block;
+  }
+}
+
+.close-button {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10000;
+  color: $gray-light;
+  right: 0;
+  top: 0;
+  padding: rem-calc(8);
+}

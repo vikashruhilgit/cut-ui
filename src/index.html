@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>TESTING</title>
+  <style>
+    :root {
+      --navigation-bottom-border-color: blue;
+    }
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: Lato, Helvetica, Arial, sans-serif;
+      min-height: 100%;
+      padding: 50px;
+    }
+  </style>
+  <link
+        href="https://d3g7tb6xhtixy5.cloudfront.net/cut/assets/icons/css/cut.css"
+        rel="stylesheet" />
+
+  <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet" />
+  <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+        rel="stylesheet" />
+  <!--  <script type="module" src="/build/cut.esm.js"></script>
+    <script nomodule src="/build/cut.js"></script> -->
+
+  <!-- <script src="https://unpkg.com/@cb/cut-2.2.22"></script> -->
+
+  <!-- <script src="http://d3g7tb6xhtixy5.cloudfront.net/cut/1/cut/cut.esm.js?k=1" type="module"></script> -->
+  <!-- <script src="http://d3g7tb6xhtixy5.cloudfront.net/cut/1/cut/cut.js" nomodule></script> -->
+  <script src="/build/cut.esm.js" type="module"></script>
+  <script src="/build/cut.js" nomodule></script>
+</head>
+
+<body>
+  <!-- <my-component></my-component>
+  <div style='height: 500px'></div>
+  <nav-testing></nav-testing>
+  <cut-wc-navigation></cut-wc-navigation>
+  <div id="testObj">test test test</div>
+  <div style="width: 600px; position: relative;"> -->
+  <!-- <cut-wc-time-picker popup_zindex="200" popup_width="200px" time="3:20 am" open="false"></cut-wc-time-picker> -->
+  <!-- <cut-wc-time-picker popuptop="100px" popupleft="100px" popupzindex="900"></cut-wc-time-picker>
+    <cut-wc-time-picker time="3:11 am"></cut-wc-time-picker>
+  </div>
+  <div style="width: 400px; position: relative;">
+    <cut-wc-time-picker-clock time="7:40 am" onclick="document.getElementById('time').innerText = this.time"></cut-wc-time-picker-clock>
+  </div>
+  <div id="time"></div> -->
+  <div>
+    <my-component></my-component>
+    <!-- <cut-wc-messenger></cut-wc-messenger> -->
+    <!-- <cut-wc-editor id="editor" html="Coucou cémoi"></cut-wc-editor> -->
+  </div>
+
+  <script>
+    const el = document.getElementById('editor');
+    el.addEventListener('htmlChange', function (e) { console.log(e) }, false)
+  </script>
+</body>
+
+</html>

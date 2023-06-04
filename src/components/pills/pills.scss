@@ -1,0 +1,108 @@
+:host {
+  display: inline-block;
+}
+
+.pills {
+  display: flex;
+  margin: auto;
+  height: rem-calc(30);
+  box-sizing: border-box;
+  @extend %border-radius-15;
+  @extend %font-size-12;
+  align-items: center;
+  color: $WHITE;
+  justify-content: center;
+  @extend %padding-x-15;
+  //min-width: rem-calc(116);
+  background-color: $color-secondary;
+  cut-wc-icon {
+    display: none;
+    user-select: none;
+  }
+  span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+  input {
+    display: none;
+  }
+}
+
+:host([gray]) {
+  .pills {
+    color: $dark-primary-text;
+    background-color: $light-secondary-text;
+    cursor: auto;
+  }
+}
+
+:host([primary]) {
+  .pills {
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid $color-tertiary;
+    color: $color-tertiary;
+    &:hover {
+      background-color: $color-tertiary;
+      color: $WHITE;
+    }
+  }
+}
+
+:host([selected]) {
+  .pills {
+    cursor: pointer;
+    background-color: $color-tertiary;
+    color: $WHITE;
+    &:hover {
+      background-color: white;
+      border: 1px solid $color-tertiary;
+      color: $color-tertiary;
+    }
+  }
+}
+
+:host([icon]) {
+  cursor: pointer;
+  .pills {
+    justify-content: flex-start;
+    cut-wc-icon {
+      display: block;
+      font-size: rem-calc(18);
+      margin-right: rem-calc(10);
+    }
+  }
+  &:host([interactive]) {
+    cursor: pointer;
+    .pills {
+      justify-content: space-between;
+      background-color: $color-tertiary;
+      color: $WHITE;
+      cut-wc-icon {
+        margin-left: rem-calc(10);
+        margin-right: 0;
+      }
+      &:hover {
+        background-color: white;
+        border: 1px solid $color-tertiary;
+        color: $color-tertiary;
+      }
+    }
+  }
+}
+
+:host([disabled]) {
+  .pills {
+    background-color: $gray-secondary-light;
+    color: $gray-dark;
+    cursor: not-allowed;
+    border: none;
+    &:hover {
+      background-color: $gray-secondary-light;
+      color: $gray-dark;
+      border: none;
+    }
+  }
+}

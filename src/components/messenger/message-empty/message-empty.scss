@@ -1,0 +1,28 @@
+.message-error {
+  border: 1px solid $gray-light;
+  flex: 1;
+  height: calc(100vh - 12rem);
+}
+.full-height {
+  height: 100%;
+}
+.align-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  img {
+    height: rem-calc(166);
+  }
+}
+.no-data-text {
+  width: rem-calc(480);
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  display: inline-block;
+}
+.p-20 {
+  padding: rem-calc(20);
+}

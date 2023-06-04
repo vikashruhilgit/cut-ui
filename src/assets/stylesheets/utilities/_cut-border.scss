@@ -1,0 +1,52 @@
+$border-total: 5;
+
+@mixin create-border-extends($width) {
+  %border-#{$width} {
+    border-width: rem-calc($width);
+    border-style: solid;
+  }
+  %border-left-#{$width} {
+    border-left-width: rem-calc($width);
+    border-style: none none none solid;
+  }
+  %border-right-#{$width} {
+    border-right-width: rem-calc($width);
+    border-style: none solid none none;
+  }
+  %border-top-#{$width} {
+    border-top-width: rem-calc($width);
+    border-style: solid none none none;
+  }
+  %border-bottom-#{$width} {
+    border-bottom-width: rem-calc($width);
+    border-style: none none solid none;
+  }
+}
+
+@for $i from 0 to $border-total {
+  @include create-border-extends($i);
+}
+
+$border-radius-total: 20;
+
+@mixin create-border-radius-extends($width) {
+  %border-radius-#{$width} {
+    border-radius: rem-calc($width);
+  }
+  %border-top-left-radius-#{$width} {
+    border-top-left-radius: rem-calc($width);
+  }
+  %border-top-right-radius-#{$width} {
+    border-top-right-radius: rem-calc($width);
+  }
+  %border-bottom-left-radius-#{$width} {
+    border-bottom-left-radius: rem-calc($width);
+  }
+  %border-bottom-right-radius-#{$width} {
+    border-top-right-radius: rem-calc($width);
+  }
+}
+
+@for $i from 0 to $border-radius-total {
+  @include create-border-radius-extends($i);
+}

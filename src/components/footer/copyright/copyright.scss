@@ -1,0 +1,9 @@
+.copyright {
+  font-size: $font-size-small;
+  color: $dark-secondary-text;
+  p {
+    margin: 0;
+    padding: rem-calc(21.8 0);
+    border-top: rem-calc(1) solid $dark-secondary-text;
+  }
+}

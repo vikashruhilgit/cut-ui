@@ -1,0 +1,261 @@
+@import "../variables/cut-theme-variables";
+@import "../mixins/cut-rem-calc";
+
+@mixin checkbox-variant($type: null) {
+  $class-name: "checkbox";
+  $color: $color-tertiary;
+  @if $type== "primary" {
+    $class-name: "checkbox-primary";
+    $color: $color-secondary;
+  } @else if $type == "warn" {
+    $class-name: "checkbox-warn";
+    $color: $accent-eta-dark;
+  }
+  .cut-#{$class-name} {
+    display: inline-block;
+    position: relative;
+    @extend %padding-left-30;
+    cursor: pointer;
+    @extend %font-size-14;
+    user-select: none;
+    .guide-line {
+      color: $dark-secondary-text;
+      font-size: $font-size-small;
+      margin-top: rem-calc(5);
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+        ~ .cut-checkmark {
+          background-color: $color;
+          border: none;
+          &:after {
+            opacity: 1;
+          }
+        }
+        &:disabled ~ .cut-checkmark {
+          &:after {
+            display: block;
+            border-color: $gray-dark;
+            left: rem-calc(7);
+            top: rem-calc(4);
+            width: rem-calc(2);
+            height: rem-calc(7);
+          }
+        }
+      }
+      &:disabled ~ .cut-checkmark {
+        background-color: $gray-light;
+        border: 1px solid $gray-dark;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .cut-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: rem-calc(20);
+      width: rem-calc(20);
+      @extend %border-radius-2;
+      border: 1px solid $gray-darker;
+      box-sizing: border-box;
+      transition: all ease-in 400ms;
+      &:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        left: rem-calc(8);
+        top: rem-calc(4);
+        width: rem-calc(3);
+        height: rem-calc(7);
+        border: solid $WHITE;
+        border-width: 0 rem-calc(2) rem-calc(2) 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+/* primary,secondary,warn */
+/* @include checkbox-variant();
+@include checkbox-variant("primary");
+@include checkbox-variant("warn"); */
+
+//
+// Radios
+// --------------------------------------------------
+
+@mixin radio-variant($type: null) {
+  $class-name: "radio";
+  $color: $color-tertiary;
+  @if $type== "primary" {
+    $class-name: "radio-primary";
+    $color: $color-secondary;
+  } @else if $type == "warn" {
+    $class-name: "radio-warn";
+    $color: $accent-eta-dark;
+  }
+  .cut-#{$class-name} {
+    display: inline-block;
+    position: relative;
+    @extend %padding-left-30;
+    cursor: pointer;
+    @extend %font-size-14;
+    user-select: none;
+    .guide-line {
+      color: $dark-secondary-text;
+      font-size: $font-size-small;
+      margin-top: rem-calc(5);
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+        ~ .cut-checkmark {
+          background-color: $color;
+          border: none;
+          &:after {
+            opacity: 1;
+          }
+        }
+        &:disabled ~ .cut-checkmark {
+          &:after {
+            display: block;
+            border-color: $gray-dark;
+            left: rem-calc(5);
+            top: rem-calc(5);
+            width: rem-calc(8);
+            height: rem-calc(8);
+            background: $gray-dark;
+          }
+        }
+      }
+      &:disabled ~ .cut-checkmark {
+        background-color: $gray-light;
+        border: 1px solid $gray-dark;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .cut-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: rem-calc(20);
+      width: rem-calc(20);
+      border: 1px solid $gray-darker;
+      box-sizing: border-box;
+      border-radius: 50%;
+      transition: all ease-in 400ms;
+      &:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        left: rem-calc(6);
+        top: rem-calc(6);
+        width: rem-calc(8);
+        height: rem-calc(8);
+        background: $WHITE;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+/* primary,secondary,warn */
+/* @include radio-variant();
+@include radio-variant("primary");
+@include radio-variant("warn"); */
+
+//
+// Toggle
+// --------------------------------------------------
+
+@mixin toggle-variant($type: null) {
+  $class-name: "toggle";
+  $color: $color-tertiary;
+  @if $type== "primary" {
+    $class-name: "toggle-primary";
+    $color: $color-secondary;
+  } @else if $type == "warn" {
+    $class-name: "toggle-warn";
+    $color: $accent-eta-dark;
+  }
+  .cut-#{$class-name} {
+    display: inline-block;
+    position: relative;
+    padding-right: rem-calc(75);
+    @extend %margin-bottom-15;
+    cursor: pointer;
+    @extend %font-size-16;
+    user-select: none;
+    .label-container {
+      display: flex;
+      align-items: center;
+    }
+    .guide-line {
+      color: $dark-secondary-text;
+      font-size: $font-size-small;
+      margin-top: rem-calc(5);
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+        ~ .cut-slider {
+          background-color: $color;
+          &:after {
+            transform: translateX(rem-calc(26));
+          }
+        }
+        &:disabled ~ .cut-slider {
+          background-color: $gray-light;
+          &:after {
+            background-color: $gray-lighter;
+            transform: translateX(rem-calc(26));
+          }
+        }
+      }
+      &:disabled ~ .cut-slider {
+        &:after {
+          background-color: $gray-lighter;
+        }
+      }
+    }
+    .cut-slider {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: rem-calc(30);
+      width: rem-calc(55);
+      margin-left: 1.5rem;
+      @extend %border-radius-15;
+      background-color: $gray-light;
+      transition: 0.4s;
+      &:after {
+        content: "";
+        position: absolute;
+        left: rem-calc(5);
+        top: rem-calc(5);
+        width: rem-calc(20);
+        height: rem-calc(20);
+        background: $WHITE;
+        border-radius: 50%;
+        transition: 0.4s;
+        @include cut-shadow("bottom-medium");
+      }
+    }
+  }
+}
+/* primary,secondary,warn */
+/* @include toggle-variant();
+@include toggle-variant("primary");
+@include toggle-variant("warn"); */

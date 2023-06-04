@@ -1,0 +1,80 @@
+.footer {
+  background-color: $gray-lightest;
+  .footer-wrapper {
+    max-width: rem-calc(1920);
+    color: $dark-secondary-text;
+    padding-top: rem-calc(30);
+
+    .footer-data {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+      .useful-list-links {
+        margin: rem-calc(30 0 5);
+        font-size: rem-calc(14);
+        display: flex;
+        flex-grow: 2;
+
+        .columns {
+          display: block;
+          margin-right: rem-calc(16);
+          flex: 1;
+          p {
+            margin: rem-calc(0 0 15);
+          }
+          .heading {
+            color: $BLACK;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .useful-icon-links {
+        @extend .useful-list-links;
+        display: block;
+        flex: 1;
+        .columns {
+          margin: rem-calc(0 0 3);
+
+          .icon-sub-menu-list {
+            display: flex;
+
+            div {
+              &:last-child {
+                p {
+                  margin-right: 0;
+                }
+              }
+            }
+
+            .styling-icons {
+              text-align: center;
+              box-sizing: border-box;
+              border: rem-calc(1) solid $dark-secondary-text;
+              border-radius: rem-calc(3);
+              padding: rem-calc(5 27 2 27);
+              margin-right: rem-calc(30);
+            }
+            .styling-social-icons {
+              margin-right: rem-calc(15);
+              cut-wc-icon {
+                font-size: rem-calc(20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 120rem) and (min-width: 85.375rem) {
+  .footer-wrapper {
+    margin: rem-calc(0 96);
+  }
+}

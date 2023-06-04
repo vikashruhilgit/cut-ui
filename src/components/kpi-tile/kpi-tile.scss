@@ -1,0 +1,184 @@
+@import "../../assets/stylesheets/cut-core";
+@import "../../assets/stylesheets/mixins/cut-rem-calc";
+
+@mixin cut-kpi-title-base($fontSize, $lineHeight) {
+  color: $dark-secondary-text;
+  font-size: rem-calc($fontSize);
+  line-height: rem-calc($lineHeight);
+  font-weight: bold;
+  letter-spacing: rem-calc(1);
+  text-transform: uppercase;
+}
+
+@mixin cut-kpi-tile {
+  text-align: left;
+}
+@mixin cut-kpi-indicator {
+  position: relative;
+
+  &:after {
+    background: $accent-eta;
+    display: block;
+    content: "";
+    width: rem-calc(8);
+    height: rem-calc(8);
+    border-radius: rem-calc(5);
+    position: absolute;
+    top: rem-calc(-4);
+    right: rem-calc(-11);
+    border: solid rem-calc(1) $WHITE;
+  }
+}
+
+@mixin cut-kpi-main-count($fontSize, $lineHeight) {
+  color: $dark-primary-text;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+  line-height: rem-calc($lineHeight);
+}
+
+@mixin cut-kpi-secondary-count($fontSize) {
+  color: $dark-secondary-text;
+  font-size: rem-calc($fontSize);
+  font-weight: bold;
+}
+
+@mixin cut-kpi-msg($msgType) {
+  @if $msgType == "error" {
+    color: $accent-eta-darker;
+  } @else if $msgType == "warn" {
+    color: $accent-epsilon-light;
+  } @else if $msgType == "info" {
+    color: $dark-primary-text;
+  }
+  font-size: rem-calc(14);
+  font-weight: bold;
+  line-height: rem-calc(14);
+}
+
+@mixin cut-kpi-infotext() {
+  color: $dark-secondary-text;
+  font-size: rem-calc(10);
+  text-transform: capitalize;
+  font-weight: normal;
+  margin-top: rem-calc(5);
+}
+
+.cut-kpi-error-msg {
+  @include cut-kpi-msg("error");
+}
+
+.cut-kpi-warn-msg {
+  @include cut-kpi-msg("warn");
+}
+
+.cut-kpi-info-msg {
+  @include cut-kpi-msg("info");
+}
+
+.cut-kpi-tile {
+  @include cut-kpi-tile();
+
+  .cut-kpi-title {
+    @include cut-kpi-title-base(12, 15);
+    grid-area: title;
+    align-self: center;
+  }
+
+  .cut-kpi-body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "maincount title";
+    grid-gap: rem-calc(10);
+    width: 100%;
+
+    .cut-kpi-main-count {
+      @include cut-kpi-main-count(50, 50);
+      grid-area: maincount;
+      align-self: left;
+    }
+  }
+
+  .cut-kpi-infotext {
+    @include cut-kpi-infotext();
+  }
+
+  // Not sure we need this anymore based on latest designs, but leaving for now
+  .cut-kpi-secondary-count {
+    @include cut-kpi-secondary-count(10);
+  }
+  .cut-kpi-indicator {
+    @include cut-kpi-indicator();
+    margin-left: rem-calc(5);
+  }
+}
+
+.cut-container-kpi-tile {
+  @include cut-kpi-tile();
+  display: flex;
+  justify-content: space-between;
+
+  .cut-kpi-title {
+    @include cut-kpi-title-base(10, 12);
+    padding-bottom: rem-calc(6);
+  }
+
+  .cut-kpi-body {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .cut-kpi-main-count {
+      @include cut-kpi-main-count(30, 30);
+      padding-right: rem-calc(5);
+    }
+  }
+
+  .cut-kpi-secondary-count {
+    @include cut-kpi-secondary-count(10);
+  }
+  .cut-kpi-indicator {
+    @include cut-kpi-indicator();
+  }
+
+  .cut-kpi-infotext {
+    @include cut-kpi-infotext();
+  }
+
+  .cut-kpi-progressbar {
+    display: flex;
+    min-width: 100px;
+  }
+  .cut-kpi-aux-infotext {
+    @include cut-kpi-infotext();
+    margin: 0;
+    font-size: $font-size-small;
+  }
+}
+
+.m-l-5 {
+  margin-left: rem-calc(5);
+}
+
+.align-right{
+  text-align: right;
+}
+
+@mixin cut-aux-main($statusType) {
+  @if $statusType == "error" {
+    color: $accent-eta-dark;
+  } @else if $statusType == "success" {
+    color: $color-secondary-dark;
+  } 
+
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h2;
+}
+
+.cut-aux-main-error {
+  @include cut-aux-main("error");
+}
+
+.cut-aux-main-success {
+  @include cut-aux-main("success");
+}

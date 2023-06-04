@@ -1,0 +1,44 @@
+.wrapper {
+  @include cut-shadow("bottom-large");
+  display: flex;
+  height: rem-calc(75);
+  width: 100%;
+  z-index: 9;
+  background: $WHITE;
+
+  .logo {
+    display: flex;
+    padding: 1rem;
+    cursor: pointer;
+
+    img {
+      width: rem-calc(209);
+      object-fit: scale-down;
+      height: 100%;
+    }
+  }
+
+  .navigation {
+    margin-left: rem-calc(65);
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+  }
+
+  .right-area {
+    display: flex;
+    align-items: flex-end;
+    margin-right: rem-calc(30);
+
+    div {
+      margin-left: rem-calc(20);
+    }
+  }
+}
+
+:host([no-drop-shadow]) {
+  .wrapper {
+    box-shadow: none;
+  }
+}

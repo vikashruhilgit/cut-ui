@@ -1,0 +1,102 @@
+input {
+  color: $dark-primary-text;
+  font-family: Lato;
+  font-size: rem-calc(16);
+  outline: none;
+  display: block;
+  width: 95%;
+  border: none;
+  padding: 0.5rem;
+  background-color: inherit;
+  transition: border-color 0.2s ease 0s;
+}
+.message {
+  background-color: inherit;
+  .message-header {
+    display: inline-flex;
+    padding-top: rem-calc(30);
+    h3 {
+      font-family: Lato;
+      font-size: rem-calc(16);
+      font-weight: $font-weight-bold;
+    }
+    cut-wc-icon {
+      cursor: pointer;
+      color: $blue;
+      padding-left: rem-calc(6);
+      font-size: $font-size-h4;
+    }
+  }
+  .body-wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 0.15fr 1fr;
+    .left {
+      .inner-row {
+        padding: rem-calc(25);
+        &.style {
+          font-family: Lato;
+          font-size: rem-calc(12);
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      height: 100%;
+      .inner-row {
+        padding: 0.8rem;
+        border-bottom: rem-calc(1) solid $gray-light;
+        border-left: rem-calc(1) solid $gray-light;
+        border-right: rem-calc(1) solid $gray-light;
+        &:first-child {
+          border-top: rem-calc(1) solid $gray-light;
+        }
+        .required {
+          font-size: rem-calc(10);
+          color: $accent-eta-dark;
+          padding: 0 0.5rem;
+          float: left;
+          &.body {
+            float: none;
+          }
+        }
+        .countTitle {
+          font-size: rem-calc(10);
+          float: right;
+        }
+      }
+
+      .center {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: rem-calc(20);
+        font-size: 75%;
+        .item-2 {
+          justify-self: right;
+        }
+        .p-r {
+          padding-right: rem-calc(10);
+        }
+        .error {
+          color: $accent-eta-dark;
+        }
+        .template-save {
+          .label {
+            font-size: 1rem;
+          }
+        }
+        cut-wc-icon {
+          cursor: pointer;
+          color: $blue;
+          padding-left: rem-calc(6);
+          font-size: 1rem;
+        }
+        .link {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

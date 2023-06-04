@@ -1,0 +1,11 @@
+$font-sixe-max: 32;
+
+@mixin create-font-size-extends($width) {
+  %font-size-#{$width} {
+    font-size: rem-calc($width);
+  }
+}
+
+@for $i from 8 to $font-sixe-max {
+  @include create-font-size-extends($i);
+}

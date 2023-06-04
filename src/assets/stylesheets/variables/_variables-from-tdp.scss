@@ -1,0 +1,42 @@
+@import "./cb-bootstrap-variables";
+
+// NOTE: Leaving this here for now, but we should never be doing product specific work in here.
+
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+
+//Fonts
+$default-font: 'Lato', sans-serif;
+$default-font-light: 'Lato-Light', sans-serif;
+$default-font-bold: 'Lato-Bold', sans-serif;
+$hover-darken: 15%;
+
+$screen-sm-min 	: 640px;
+$screen-md-min	: 960px;
+$screen-lg-min	: 1200px;
+$container-max	: 1600px;
+$grid-gutter-width	: 30px;
+
+//Breakpoints
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+$screen-sm:                  $screen-sm-min !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+$screen-md:                  $screen-md-min !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+$screen-lg:                  $screen-lg-min !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+// Move to VDL
+
+$container-max : 1800px;

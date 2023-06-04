@@ -1,0 +1,83 @@
+@import "../variables/cut-theme-variables";
+@import "../mixins/cut-rem-calc";
+@import "../mixins/cut-gradients";
+
+@mixin cut-button-size($size) {
+  @if $size == "large" {
+    height: rem-calc(50);
+    @extend %font-size-16;
+  } @else if $size == "medium" {
+    height: rem-calc(45);
+    @extend %font-size-16;
+  } @else if $size == "small" {
+    height: rem-calc(35);
+    @extend %font-size-12;
+  }
+}
+
+%cut-button-extend {
+  cursor: pointer;
+  border: none;
+  @extend %border-radius-5;
+  min-width: rem-calc(100);
+  box-sizing: border-box;
+  padding: rem-calc(0 15);
+  white-space: nowrap;
+  font-weight: inherit;
+}
+
+@mixin cut-button-hover($type) {
+  color: $WHITE;
+  @if $type == "primary" {
+    background: $color-secondary;
+  } @else if $type == "accent" or $type == "tertiary" {
+    background: $color-tertiary;
+    @include cut-shadow("bottom-medium");
+  } @else if $type == "warn" {
+    background: $accent-eta-dark;
+  }
+}
+
+@mixin cut-button($type) {
+  @extend %cut-button-extend;
+  @if $type == "primary" {
+    @include cut-gradient($type, false);
+    @include cut-shadow("bottom-medium");
+  } @else if $type == "accent" {
+    @include cut-gradient($type, false);
+    @include cut-shadow("bottom-medium");
+  } @else if $type == "warn" {
+    @include cut-gradient($type, false);
+    @include cut-shadow("bottom-medium");
+  } @else if $type == "tertiary" {
+    color: $color-tertiary;
+    background-color: transparent;
+    border: 2px solid $color-tertiary;
+  }
+}
+
+@mixin create-cut-buttons($types...) {
+  @each $type in $types {
+    .cut-button-#{$type} {
+      @include cut-button($type);
+      &:hover {
+        @include cut-button-hover($type);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+@mixin create-cut-buttons-size($sizes...) {
+  @each $single in $sizes {
+    .cut-button-#{$single} {
+      @include cut-button-size($single);
+    }
+  }
+}
+
+/*
+@include create-cut-buttons(primary, accent, warn, tertiary);
+@include create-cut-buttons-size(large, medium, small);
+ */

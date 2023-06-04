@@ -1,0 +1,43 @@
+﻿@import "../variables/cut-theme-variables";
+
+.dropdown, .dropdown.open {
+    .name-dropdown {
+        background-color: transparent;
+        border: none;
+        color: $color-primary;
+        padding: 24px 14px 18px 14px;
+        font-size: 13px;
+        line-height: 22px;
+
+        &:hover, &:focus, &:active {
+            background-color: transparent;
+            border: none;
+            color: #bdbdbd;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .name-dropdown-list {
+        margin-top: 0;
+        padding: 0;
+        border-radius: $border-radius-base;
+
+        > li {
+            border: none;
+        }
+    }
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    padding: 0 15px;
+    float: none;
+}
+
+.dropdown-toggle::before {
+    float: right;
+    color: #39B3E1;
+    font-size: 21px;
+}

@@ -1,0 +1,47 @@
+@import "../variables/cut-theme-variables";
+
+@mixin cut-shadow($type) {
+  @if $type == "bottom-small" {
+    box-shadow: 0px 3px 6px 0px #{$BLACK}0d;
+  } @else if $type == "bottom-medium" {
+    box-shadow: 0px 3px 6px 0px #{$BLACK}29;
+  } @else if $type == "bottom-large" {
+    box-shadow: 0px 5px 20px 0px #{$BLACK}29;
+  } @else if $type == "top-small" {
+    box-shadow: 0px -3px 6px 0px #{$BLACK}0d;
+  } @else if $type == "top-medium" {
+    box-shadow: 0px -3px 6px 0px #{$BLACK}29;
+  } @else if $type == "top-large" {
+    box-shadow: 0px -5px 20px 0px #{$BLACK}29;
+  } @else if $type == "selected-small" {
+    box-shadow: 0px 3px 6px 0px #{$color-secondary}0d;
+    border: 2px solid $color-secondary;
+  } @else if $type == "selected-medium" {
+    box-shadow: 0px 3px 6px 0px #{$color-secondary}29;
+    border: 2px solid $color-secondary;
+  } @else if $type == "selected-large" {
+    box-shadow: 0px 5px 20px 0px #{$color-secondary}29;
+    border: 2px solid $color-secondary;
+  }
+}
+
+//example - params to be passed like this --- "bottom-small", "bottom-medium", "bottom-large",
+@mixin create-cut-Shadow-rules($types...) {
+  @each $type in $types {
+    .cut-shadow-#{$type} {
+      @include cut-shadow($type);
+    }
+  }
+}
+
+/* @include create-cut-Shadow-rules(
+  "bottom-small",
+  "bottom-medium",
+  "bottom-large",
+  "top-small",
+  "top-medium",
+  "top-large",
+  "selected-small",
+  "selected-medium",
+  "selected-large"
+); */

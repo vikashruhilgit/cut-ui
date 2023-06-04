@@ -1,0 +1,227 @@
+.wrapper {
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: $dark-primary-text;
+  position: relative;
+  .guidance {
+    display: block;
+    font-size: 0.75rem;
+    color: $dark-secondary-text;
+    margin-top: 0.5rem;
+    margin-left: 0.625rem;
+    margin-bottom: 1rem;
+  }
+  .icon-error,
+  .icon-success,
+  .icon {
+    position: relative;
+    right: 0;
+    float: right;
+    div {
+      position: absolute;
+      right: 100%;
+      bottom: 100%;
+      margin-bottom: 0.5rem;
+      display: flex;
+      cut-wc-icon {
+        font-size: 1rem;
+        display: none;
+        &.icon-user {
+          display: block;
+          color: $color-tertiary;
+        }
+      }
+    }
+  }
+  .input {
+    padding: 1.8rem 0.5rem 0.5rem 0.625rem;
+    font-size: 1rem;
+    border-bottom: 1px solid $color-tertiary;
+    transition: border-color 0.2s ease;
+    &::placeholder {
+      color: $WHITE;
+    }
+  }
+  .label {
+    display: block;
+    position: relative;
+    max-height: 0;
+    pointer-events: none;
+    &::before {
+      color: $dark-secondary-text;
+      content: attr(data-content);
+      display: inline-block;
+      backface-visibility: hidden;
+      transform-origin: left top;
+      transition: transform 0.3s ease;
+      left: 0.625rem;
+      position: relative;
+      bottom: 0;
+    }
+    &::after {
+      bottom: 1px;
+      content: "";
+      height: 1px;
+      position: absolute;
+      transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 180ms cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+      opacity: 0;
+      left: 0;
+      top: 100%;
+      margin-top: -0.1rem;
+      transform: scale3d(0, 1, 1);
+      width: 100%;
+      background-color: $color-tertiary;
+    }
+  }
+
+  fieldset {
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  legend {
+    padding: 0 0.5rem;
+  }
+
+  .hidden--visually {
+    border: 0;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  input {
+    outline: none;
+    border-width: 0;
+    background: none;
+    display: block;
+    width: 100%;
+  }
+
+  &:hover .input {
+    border-color: $color-tertiary;
+  }
+  .drop-down {
+    @include cut-shadow("bottom-medium");
+    background: $WHITE;
+    font-size: rem-calc(14);
+    width: 100%;
+    position: absolute;
+    top: rem-calc(58);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -9;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: rem-calc(5 0);
+      li {
+        padding: rem-calc(5 10);
+        cursor: pointer;
+        &:hover {
+          background: $gray-lightest;
+        }
+      }
+    }
+  }
+}
+
+.input:focus + .label::after {
+  transform: scale3d(1, 1, 1);
+  opacity: 1;
+}
+
+.input:placeholder-shown + .label::before {
+  transform: translate3d(0, -1.8rem, 0) scale3d(1, 1, 1);
+}
+
+.label::before,
+.input:focus + .label::before {
+  transform: translate3d(0, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+}
+
+.input:focus + .label::before {
+  font-weight: $font-weight-bold;
+}
+
+.input:focus ~ .drop-down {
+  opacity: 1;
+  z-index: 9;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:host([icon]) {
+  .icon {
+    cut-wc-icon.icon-user {
+      display: block;
+      color: $color-tertiary;
+    }
+  }
+}
+
+:host([success]) {
+  .label::after {
+    background-color: $color-secondary;
+  }
+  .input {
+    border-bottom: 0.1rem solid $color-secondary;
+  }
+  .icon {
+    cut-wc-icon.success {
+      display: block;
+      color: $color-secondary;
+      font-weight: bolder;
+    }
+  }
+}
+
+:host([error]) {
+  .input {
+    border-bottom: 0.1rem solid $accent-eta;
+  }
+  .guidance {
+    color: $accent-eta;
+  }
+  .label::after {
+    background-color: $accent-eta;
+  }
+  .label::before {
+    color: $accent-eta;
+  }
+  .icon {
+    cut-wc-icon.error {
+      display: block;
+      color: $accent-eta;
+    }
+  }
+}
+
+:host([disabled]) {
+  .input {
+    border-bottom: 0.1rem solid $gray-dark;
+  }
+  .guidance {
+    color: $gray-dark;
+  }
+  .label::after {
+    background-color: $gray-dark;
+  }
+  .label::before {
+    color: $gray-dark;
+  }
+  .input {
+    color: $dark-secondary-text;
+  }
+}

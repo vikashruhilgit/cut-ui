@@ -1,0 +1,43 @@
+.wrapper {
+  color: $dark-secondary-text;
+  font-size: rem-calc(14);
+  width: 100%;
+  .top-container {
+    font-weight: $font-weight-bold;
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin: rem-calc(10 0);
+    }
+  }
+  .bar-container {
+    background-color: $light-secondary-text;
+    border-radius: rem-calc(3);
+    .bar {
+      height: rem-calc(6);
+      @include cut-gradient("accent", false);
+      border-radius: rem-calc(3);
+      transition: all .5s ease-out;
+    }
+  }
+}
+
+:host([primary]) {
+  .wrapper {
+    .bar-container {
+      .bar {
+        @include cut-gradient("primary", false);
+      }
+    }
+  }
+}
+
+:host([warn]) {
+  .wrapper {
+    .bar-container {
+      .bar {
+        @include cut-gradient("warn", false);
+      }
+    }
+  }
+}

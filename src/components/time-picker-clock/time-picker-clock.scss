@@ -1,0 +1,202 @@
+.time-picker-container {
+  display: flex;
+  position: relative;
+  min-width: rem-calc(350);
+  width: 100%;
+  background: $WHITE;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0;
+  z-index: 100;
+
+  .digital-time-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: rem-calc(50);
+    font-weight: 700;
+    text-align: center;
+    padding: rem-calc(16);
+    color: $WHITE;
+    background-color: $color-tertiary;
+
+    .timePartHour,
+    .timePartMinute {
+      cursor: pointer;
+      padding: rem-calc(8);
+      border-radius: rem-calc(12);
+      margin: rem-calc(8);
+    }
+
+    .ampm {
+      display: flex;
+      flex-direction: column;
+      font-size: rem-calc(16);
+
+      span {
+        padding: rem-calc(4);
+        cursor: pointer;
+        border-radius: rem-calc(8);
+      }
+
+      &.am {
+        .am {
+          background: $accent-beta;
+        }
+      }
+
+      &.pm {
+        .pm {
+          background: $accent-beta;
+        }
+      }
+    }
+  }
+
+  &.hours {
+    .timePartHour {
+      background: $accent-beta;
+    }
+  }
+
+  &.minutes {
+    .timePartMinute {
+      background: $accent-beta;
+    }
+  }
+
+  .clock-container {
+    padding: rem-calc(32);
+    box-sizing: border-box;
+    width: 100%;
+
+    .clock {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+      border-radius: 50%;
+      background-color: $WHITE;
+
+      .clock-hand {
+        position: absolute;
+        height: 50%;
+        width: rem-calc(3);
+        background: $gray-darker;
+        transform-origin: center bottom;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        padding: 0;
+        margin: 0;
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        span {
+          display: block;
+          border-radius: 50%;
+          background-color: $gray-dark;
+          position: absolute;
+          margin-top: rem-calc(12);
+          padding: rem-calc(8);
+        }
+      }
+    }
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul {
+  width: 100%;
+  height: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  padding: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  height: 49.5%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50%;
+  transform-origin: center bottom;
+  display: flex;
+  justify-content: center;
+  width: rem-calc(30);
+  cursor: pointer;
+
+  span {
+    display: flex;
+    width: rem-calc(10);
+    height: rem-calc(10);
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    position: absolute;
+    cursor: pointer;
+  }
+}
+
+.hours {
+  .hours-dial {
+    display: flex;
+  }
+  .minutes-dial {
+    display: none;
+  }
+}
+
+.minutes {
+  .hours-dial {
+    display: none;
+  }
+  .minutes-dial {
+    display: flex;
+  }
+}
+
+.clock-container.minutes {
+  .minutes-dial {
+    display: flex;
+  }
+}
+
+.hours-dial {
+  @for $i from 1 through 12 {
+    li:nth-of-type(#{$i}) {
+      transform: rotateZ(#{$i * 30}deg);
+      span {
+        transform: rotateZ(-#{$i * 30}deg);
+      }
+    }
+  }
+}
+
+.minutes-dial {
+  span {
+    font-size: rem-calc(12);
+    color: $gray-darker;
+  }
+
+  @for $i from 1 through 60 {
+    li:nth-of-type(#{$i}) {
+      transform: rotateZ(#{$i * 6-6}deg);
+    }
+  }
+}

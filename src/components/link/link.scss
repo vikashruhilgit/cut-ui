@@ -1,0 +1,52 @@
+:host {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  font-size: rem-calc(14);
+  a {
+    text-decoration: none;
+    color: #2777b4;
+    &:hover {
+      color: #0097d1;
+    }
+    &:visited {
+      color: #005a7d;
+    }
+  }
+  cut-wc-icon {
+    display: flex;
+    align-items: flex-end;
+    font-size: inherit;
+    padding: rem-calc(0 10);
+    color: #2777b4;
+    order: -1;
+  }
+}
+
+a:hover + cut-wc-icon {
+  color: #0097d1;
+}
+a:visited + cut-wc-icon {
+  color: #005a7d;
+}
+
+:host([disabled]) {
+  span {
+    font-size: inherit;
+    cursor: not-allowed;
+    color: #aaaaaa;
+  }
+  cut-wc-icon {
+    cursor: not-allowed;
+    color: #aaaaaa;
+  }
+}
+
+:host([small]) {
+  .wrapper {
+    font-size: rem-calc(12);
+  }
+}

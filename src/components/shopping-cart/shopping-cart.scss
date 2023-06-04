@@ -1,0 +1,25 @@
+.icon-wrapper{
+  position: relative;
+  margin-bottom: rem-calc(29);
+  cut-wc-icon{
+    display: flex;
+  }
+  .count{
+    background:$color-tertiary;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 50%;
+    span{
+      line-height: rem-calc(16);
+      font-size: rem-calc(9);
+      color: $WHITE;
+      display: flex;
+      min-width: rem-calc(16);
+      height: rem-calc(16);
+      justify-content: center;
+      padding: rem-calc(0 3);
+      box-sizing: border-box;
+    }
+  }
+}

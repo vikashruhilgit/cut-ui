@@ -1,0 +1,60 @@
+:host {
+  display: inline-block;
+}
+.wrapper {
+  height: rem-calc(35);
+  width: rem-calc(35);
+  //@include cut-gradient('accent', false);
+  @include cut-shadow("bottom-medium");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $WHITE;
+  cursor: pointer;
+  color: $color-secondary-dark;
+  cut-wc-icon {
+    display: flex;
+    font-size: rem-calc(20);
+  }
+  &:hover {
+    background-color: $color-secondary-dark;
+    color: $WHITE;
+  }
+}
+:host([big]) {
+  .wrapper {
+    height: rem-calc(55);
+    width: rem-calc(55);
+    cut-wc-icon {
+      font-size: rem-calc(32);
+    }
+  }
+}
+:host([primary]) {
+  .wrapper {
+    color: $gray-dark;
+    @include cut-gradient("primary", false);
+    &:hover {
+      background: $color-secondary;
+      color: $WHITE;
+    }
+  }
+}
+:host([accent]) {
+  .wrapper {
+    color: $gray-dark;
+    @include cut-gradient("accent", false);
+    &:hover {
+      background: $color-tertiary;
+      color: $WHITE;
+    }
+  }
+}
+:host([disabled]) {
+  .wrapper {
+    cursor: not-allowed;
+    color: $gray-dark;
+    background-color: $gray-secondary-light;
+  }
+}
